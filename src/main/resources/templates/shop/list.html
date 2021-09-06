@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table class="tb_col">
+    <tr>
+        <th>shopName</th>
+        <th>shopAddress</th>
+    </tr>
+    <tr th:each="shop : ${shopList}">
+        <td><a th:href="@{/menu/list(shopId=${shop.getId()})}" th:text="${shop.shopName}"></a></td>
+        <td th:text="${shop.shopAddress}"></td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>

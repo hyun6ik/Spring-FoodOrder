@@ -22,12 +22,16 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "menu", cascade = ALL, orphanRemoval = true)
-    private List<Food> foodList = new ArrayList<>();
+    private Long shopId;
 
-    @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "shop_id")
-    private Shop shop;
+    private String foodName;
 
+    public Menu(Long shopId, String foodName) {
+        this.shopId = shopId;
+        this.foodName = foodName;
+    }
 
+    public static Menu of(Long shopId, String foodName) {
+        return new Menu(shopId, foodName);
+    }
 }

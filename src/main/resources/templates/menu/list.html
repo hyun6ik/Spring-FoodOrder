@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table class="tb_col">
+    <tr>
+        <th>메뉴</th>
+    </tr>
+    <tr th:each="menu : ${menuList}">
+        <td th:text="${menu.foodName}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

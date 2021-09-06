@@ -29,10 +29,5 @@ public class Orders {
 
     private boolean deliveredFinish = false;
 
-    @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "shop_id")
-    private Shop shop;
 
-    @OneToMany(mappedBy = "orders")
-    private List<Food> foodList = new ArrayList<>();
 }

@@ -27,12 +27,6 @@ public class Shop {
     @Length(max = 40)
     private String shopAddress;
 
-    @OneToMany(mappedBy = "shop", cascade = ALL, orphanRemoval = true)
-    private List<Menu> menuList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "shop", cascade = ALL, orphanRemoval = true)
-    private List<Orders> ordersList = new ArrayList<>();
-
 
     public Shop(String shopName, String shopAddress) {
         this.shopName = shopName;

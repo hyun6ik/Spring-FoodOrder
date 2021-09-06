@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -15,8 +17,14 @@ public class ShopServiceImpl implements ShopService {
     private final ShopRepository shopRepository;
 
 
+    @Transactional
     @Override
     public Shop createShop(ShopCreateRequest request) {
         return shopRepository.save(Shop.of(request.getShopName(), request.getShopAddress()));
+    }
+
+    @Override
+    public List<Shop> retrieveShopList() {
+        return shopRepository.findAll();
     }
 }
