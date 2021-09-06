@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table class="tb_col">
+    <tr>
+        <th>주문한 상점</th>
+        <th>주문한 음식</th>
+        <th>배달 주소</th>
+        <th>배달 주문 시간</th>
+        <th>예상 배달 시간  </th>
+        <th>배달 상태  </th>
+    </tr>
+    <tr>
+        <td th:text="${shopName}"></td>
+        <td th:text="${foodList}"></td>
+        <td th:text="${order.address}"></td>
+        <td th:text="${order.orderDate}"></td>
+        <td th:text="${order.estimatedTime} == -1 ? '미정' : ${order.estimatedTime} + '분'"></td>
+        <td th:text="${order.deliveredFinish} == false ? '배달 미완료' : '배달 완료'"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

@@ -3,6 +3,7 @@ package com.example.foodorder.domain.service.shop;
 import com.example.foodorder.domain.entity.Shop;
 import com.example.foodorder.domain.repository.shop.ShopRepository;
 import com.example.foodorder.web.dto.request.shop.ShopCreateRequest;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,5 +27,10 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public List<Shop> retrieveShopList() {
         return shopRepository.findAll();
+    }
+
+    @Override
+    public Shop findShopById(Long shopId) throws NotFoundException {
+       return shopRepository.findById(shopId).orElseThrow(() -> new NotFoundException("없어요!"));
     }
 }

@@ -4,15 +4,21 @@
     <title>Document</title>
 </head>
 <body>
-<table class="tb_col">
-    <tr>
-        <th>메뉴</th>
-    </tr>
-    <tr th:each="menu : ${menuList}">
-        <td th:text="${menu.foodName}"></td>
-    </tr>
-</table>
-
+<form th:action="@{/order/list}" th:object="${form}" method="post">
+    <h4>1. 주문하실 음식을 골라주세요</h4>
+    <ul>
+        <th:block th:each="menu : ${menuList}">
+            <input type="checkbox" th:field="*{foodList}" th:value="${menu.foodName}" />
+            <label th:for="${#ids.prev('foodList')}" th:text="${menu.foodName}"></label><br>
+        </th:block>
+    </ul>
+    <h4>2. 집주소를 알려주세요</h4>
+    <ul>
+        <input type="text" th:field="*{address}" required="true">
+    </ul>
+    <input th:type="hidden" name="shopId" th:value="${shopId}">
+    <input type="submit" value="주문완료하기">
+</form>
 
 </body>
 </html>
