@@ -1,17 +1,18 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/food_order
+    url: jdbc:mariadb://hyun6iktest.cekmk8zymyy4.ap-northeast-2.rds.amazonaws.com:3306/foodorderdatabase
     username: root
-    password: 123456
+    password: 12345678
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
         use_sql_comments: true
         default_batch_fetch_size: 100
+
   flyway:
     baseline-on-migrate: true
     enabled: true
