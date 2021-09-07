@@ -19,4 +19,6 @@ public interface OrderService {
     Orders findById(Long orderId) throws NotFoundException;
 
     Orders changeEstTime(Orders orders, int estimatedTime);
+
+    Long deliveryUpdate(Long orderId) throws NotFoundException;
 }

@@ -58,6 +58,22 @@ public class OrderController {
         return "redirect:/order/timeInput";
     }
 
+    @GetMapping("deliveryList")
+    public String deliveryList(@RequestParam Long shopId, Model model) throws NotFoundException {
+        final List<Orders> ordersList = orderService.findByShopId(shopId);
+
+        model.addAttribute("orderList", ordersList);
+        return "delivery/deliveryInput";
+    }
+
+    @GetMapping("deliveryUpdate")
+    public String deliveryUpdate(@RequestParam Long orderId, RedirectAttributes redirectAttributes) throws NotFoundException {
+        final Long shopId = orderService.deliveryUpdate(orderId);
+
+        redirectAttributes.addAttribute("shopId", shopId);
+        return "redirect:/order/deliveryList";
+    }
+
 
 
 }

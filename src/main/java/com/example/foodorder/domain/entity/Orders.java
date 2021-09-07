@@ -59,4 +59,8 @@ public class Orders {
     public void changeEstTime(int estimatedTime) {
         this.estimatedTime = estimatedTime;
     }
+
+    public void changeDeliveredFinish(boolean b) {
+        this.deliveredFinish = b;
+    }
 }

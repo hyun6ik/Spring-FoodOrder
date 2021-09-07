@@ -52,4 +52,16 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.save(orders);
     }
 
+    @Transactional
+    @Override
+    public Long deliveryUpdate(Long orderId) throws NotFoundException {
+        final Orders order = orderRepository.findById(orderId).orElseThrow(() -> new NotFoundException("없어요!!"));
+        if (!order.isDeliveredFinish()) {
+            order.changeDeliveredFinish(true);
+            return orderRepository.save(order).getShopId();
+        }
+        order.changeDeliveredFinish(false);
+        return orderRepository.save(order).getShopId();
+    }
+
 }
