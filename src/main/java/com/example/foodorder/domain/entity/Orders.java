@@ -55,4 +55,8 @@ public class Orders {
     public static Orders of(String address, LocalDateTime orderDate, Long shopId) {
         return new Orders(address, orderDate, shopId);
     }
+
+    public void changeEstTime(int estimatedTime) {
+        this.estimatedTime = estimatedTime;
+    }
 }

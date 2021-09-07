@@ -18,7 +18,7 @@
         <td th:text="${foodList}"></td>
         <td th:text="${order.address}"></td>
         <td th:text="${order.orderDate}"></td>
-        <td th:text="${order.estimatedTime} == -1 ? '미정' : ${order.estimatedTime} + '분'"></td>
+        <td th:text="${order.estimatedTime} + '분'"></td>
         <td th:text="${order.deliveredFinish} == false ? '배송중' : '배달 완료'"></td>
     </tr>
 </table>
