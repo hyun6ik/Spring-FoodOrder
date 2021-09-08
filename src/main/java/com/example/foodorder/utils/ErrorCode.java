@@ -12,7 +12,7 @@ public enum ErrorCode {
     NOT_FOUND_EXCEPTION_BOARD(404,"해당 하는 게시글을 찾을 수 없습니다."),
 
     ALREADY_EXIST_EXCEPTION_USER(400, "이미 존재하는 계정입니다."),
-    ALREADY_EXIST_EXCEPTION_NICKNAME(400, "이미 존재하는 별명입니다."),
+    ALREADY_EXIST_EXCEPTION_NICKNAME(400, "이미 존재하는 별명입니다.");
 
 
 
