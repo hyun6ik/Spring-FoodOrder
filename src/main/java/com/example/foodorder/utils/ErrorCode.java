@@ -14,11 +14,6 @@ public enum ErrorCode {
     ALREADY_EXIST_EXCEPTION_USER(400, "이미 존재하는 계정입니다."),
     ALREADY_EXIST_EXCEPTION_NICKNAME(400, "이미 존재하는 별명입니다."),
 
-    JWT_TOKEN_EXCEPTION(400, "토큰 오류 입니다."),
-    JWT_TOKEN_EXCEPTION_PARSING(400, "토큰 파싱 오류 입니다."),
-    JWT_TOKEN_EXCEPTION_INVALID(400,"유효한 토큰이 없습니다."),
-
-    FILE_CONVERT_EXCEPTION(400, "MultipartFile을 File로 컨버팅 하는데 실패했습니다.");
 
 
     private int code;
