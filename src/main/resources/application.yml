@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: foodOrder
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://hyun6iktest.cekmk8zymyy4.ap-northeast-2.rds.amazonaws.com:3306/foodorderdatabase
-    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cd3181nkwnoe.ap-northeast-2.rds.amazonaws.com:3306/foodOrder
+    username: admin
     password: 12345678
   jpa:
     hibernate:
@@ -13,6 +15,3 @@ spring:
         use_sql_comments: true
         default_batch_fetch_size: 100
 
-  flyway:
-    baseline-on-migrate: true
-    enabled: true
