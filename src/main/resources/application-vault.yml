@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    vault:
-      scheme: http
-      authentication: token
-      token: s.U1Mu2F2Jpz9yAt5flsQaOfEN
-  config:
-    import: vault://
