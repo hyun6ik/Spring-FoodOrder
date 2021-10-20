@@ -3,9 +3,9 @@ spring:
     name: foodOrder
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mysql://database-1.cd3181nkwnoe.ap-northeast-2.rds.amazonaws.com:3306/foodOrder
+    username: admin
+    password: 12345678
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,5 +14,4 @@ spring:
         format_sql: true
         use_sql_comments: true
         default_batch_fetch_size: 100
-  profiles:
-    include: vault
+
